@@ -20,7 +20,7 @@ def generate_url():
 def get_data():
     response = requests.get(generate_url())    
     data = json.loads(response.text)
-    print(response.text)
+    # print(response.text)
 
     available_centers = []
     names = []
@@ -61,7 +61,7 @@ def send_mail():
             body += para
 
         msg = f'Subject: {subject}\n\n{body + cowin}'
-        print(msg)
+        # print(msg)
         for email in emails:
             server.sendmail('preyasujph@gmail.com', email, msg)
 
