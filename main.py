@@ -55,12 +55,14 @@ def send_mail():
     if len(centers) > 0:
 
         body = ''
-        cowin = 'Book on: https://www.cowin.gov.in/home'
+        cowin = 'Book on: https://www.cowin.gov.in/home \n'
         for center in centers:
             para = f'{center["quantity"]} slots are available at {center["name"]}, {center["address"]}.\n\n'
             body += para
 
-        msg = f'Subject: {subject}\n\n{body + cowin}'
+        zone = pytz.timezone('Asia/Kolkata')
+        update = f'Database updated on :{datetime.now(zone)}'
+        msg = f'Subject: {subject}\n\n{body + cowin + update}'
         # print(msg)
         for email in emails:
             server.sendmail('preyasujph@gmail.com', email, msg)
