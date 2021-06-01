@@ -1,0 +1,11 @@
+---
+application:
+  name: "vaccine_checker"
+  project: "vaccine-bot"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-vaccine_checker"
+  routes:
+  - application_name: "vaccine_checker"
+    paths:
+    - "/*"
