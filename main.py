@@ -6,7 +6,7 @@ import smtplib
 from time import sleep
 import schedule
 
-emails = ['preyasu.official@gmail.com', 'shouryabhadra28@gmail.com', 'balajishaw16@gmail.com']
+emails = ['shouryabhadra28@gmail.com', 'balajishaw16@gmail.com']
 
 def generate_url():
     zone = pytz.timezone('Asia/Kolkata')
