@@ -6,7 +6,8 @@ import smtplib
 from time import sleep
 import schedule
 
-emails = ['shouryabhadra28@gmail.com', 'balajishaw16@gmail.com']
+emails = ['test@email.com', 'test2@email.com']
+#add more emails as per your needs
 
 def generate_url():
     zone = pytz.timezone('Asia/Kolkata')
@@ -47,7 +48,7 @@ def send_mail():
     server.starttls()
     server.ehlo()
 
-    server.login('preyasujph@gmail.com', 'odydhtybyfkfmlih')
+    server.login('ENTER YOUR EMAIL HERE', 'PASSWORD HERE')
 
     centers = get_data()
     subject = 'Vaccine Slots Available!!'
@@ -65,7 +66,7 @@ def send_mail():
         msg = f'Subject: {subject}\n\n{body + cowin + update}'
         # print(msg)
         for email in emails:
-            server.sendmail('preyasujph@gmail.com', email, msg)
+            server.sendmail('EMAIL', email, msg)
 
 
 if __name__ == "__main__":
